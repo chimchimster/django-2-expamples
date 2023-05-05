@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -10,6 +9,7 @@ def image_create(request):
     if request.method == 'POST':
         form = ImageCreateForm(data=request.POST)
 
+        print(form.__dict__)
         if form.is_valid():
             cd = form.cleaned_data
 
@@ -20,6 +20,6 @@ def image_create(request):
 
             return redirect(new_item.get_absolute_url())
     else:
-        form = ImageCreateForm()
+        form = ImageCreateForm(data=request.GET)
 
     return render(request, 'images/image/create.html', {'section': 'images', 'form': form})

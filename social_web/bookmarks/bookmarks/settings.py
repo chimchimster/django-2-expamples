@@ -27,7 +27,12 @@ SECRET_KEY = 'django-insecure-2-arys)7qkce$oxy20_7tq-2jq56gj)f@xxmb)8(nfb&m#@!l1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'mysite.com',
+    'localhost',
+    '127.0.0.1',
+    'b846-87-255-208-226.ngrok-free.app',
+]
 
 # Application definition
 
@@ -141,3 +146,5 @@ AUTHENTICATION_BACKENDS = [
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('SOCIAL_AUTH_FACEBOOK_KEY')
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+CSRF_TRUSTED_ORIGINS = ['https://b846-87-255-208-226.ngrok-free.app']
