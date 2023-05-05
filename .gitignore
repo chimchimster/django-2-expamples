@@ -3,4 +3,14 @@ social_web/env/
 social_web/bookmarks/db.sqlite3
 social_web/bookmarks/bookmarks/.env
 social_web/bookmarks/media/
-__pycache__/
+social_web/bookmarks/account/__pycache__/
+social_web/bookmarks/account/migrations/__pycache__/
+social_web/bookmarks/bookmarks/__pycache__/
+social_web/bookmarks/images/__pycache__/
+social_web/bookmarks/images/migrations/__pycache__/
+social_web/bookmarks/common/__pycache__/
+mysite/mysite/__pycache__/
+mysite/blog/migrations/__pycache__/
+mysite/blog/templatetags/__pycache__/
+
+
