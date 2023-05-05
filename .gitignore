@@ -3,3 +3,4 @@ social_web/env/
 social_web/bookmarks/db.sqlite3
 social_web/bookmarks/bookmarks/.env
 social_web/bookmarks/media/
+__pycache__/
