@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+from django.urls import reverse_lazy
 
 load_dotenv()
 
@@ -32,6 +33,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'b846-87-255-208-226.ngrok-free.app',
+    '8b0e-87-255-208-226.ngrok-free.app',
 ]
 
 # Application definition
@@ -148,6 +150,10 @@ SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('SOCIAL_AUTH_FACEBOOK_KEY')
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
-CSRF_TRUSTED_ORIGINS = ['https://b846-87-255-208-226.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://b846-87-255-208-226.ngrok-free.app', 'https://8b0e-87-255-208-226.ngrok-free.app']
 
-THUMBNAIL_DEBUG=True
+THUMBNAIL_DEBUG = True
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}

@@ -1,10 +1,13 @@
 from django.http import HttpResponseBadRequest
 
 
+def is_ajax(_request):
+    return _request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
+
+
 def ajax_required(func):
     def wraps(request, *args, **kwargs):
-        def is_ajax(_request):
-            return _request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
+
 
         if not is_ajax(request):
             return HttpResponseBadRequest()

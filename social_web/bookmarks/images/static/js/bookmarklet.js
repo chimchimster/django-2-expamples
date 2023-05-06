@@ -1,6 +1,6 @@
 (function() {
     var jquery_version = '3.6.4';
-    var site_url = 'https://b846-87-255-208-226.ngrok-free.app/';
+    var site_url = 'https://8b0e-87-255-208-226.ngrok-free.app/';
     var static_url = site_url + 'static/';
     var min_width = 100;
     var min_height = 100;
