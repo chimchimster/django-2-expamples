@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.utils.text import slugify
 from .forms import ImageCreateForm
 from .models import Image
+from actions.utils import create_action
 from common.decorators import ajax_required, is_ajax
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
@@ -23,6 +24,7 @@ def image_create(request):
             new_item = form.save(commit=False)
             new_item.user = request.user
             new_item.save()
+            create_action(request.user, 'bookmarked image', new_item)
             messages.success(request, 'Image successfully added!')
 
             return redirect(new_item.get_absolute_url())
