@@ -34,11 +34,14 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'b846-87-255-208-226.ngrok-free.app',
     '8b0e-87-255-208-226.ngrok-free.app',
+    '5efe-92-55-176-122.ngrok-free.app',
+    '0c87-92-55-176-122.ngrok-free.app'
 ]
 
 # Application definition
 
 INSTALLED_APPS = [
+    'actions.apps.ActionsConfig',
     'images.apps.ImagesConfig',
     'account.apps.AccountConfig',
     'django.contrib.admin',
@@ -150,7 +153,12 @@ SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('SOCIAL_AUTH_FACEBOOK_KEY')
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
-CSRF_TRUSTED_ORIGINS = ['https://b846-87-255-208-226.ngrok-free.app', 'https://8b0e-87-255-208-226.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = [
+    'https://b846-87-255-208-226.ngrok-free.app',
+    'https://8b0e-87-255-208-226.ngrok-free.app',
+    'https://5efe-92-55-176-122.ngrok-free.app',
+    'https://0c87-92-55-176-122.ngrok-free.app',
+]
 
 THUMBNAIL_DEBUG = True
 
