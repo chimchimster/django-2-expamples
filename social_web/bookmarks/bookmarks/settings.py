@@ -35,7 +35,8 @@ ALLOWED_HOSTS = [
     'b846-87-255-208-226.ngrok-free.app',
     '8b0e-87-255-208-226.ngrok-free.app',
     '5efe-92-55-176-122.ngrok-free.app',
-    '0c87-92-55-176-122.ngrok-free.app'
+    '0c87-92-55-176-122.ngrok-free.app',
+    'b36e-92-55-176-6.ngrok-free.app',
 ]
 
 # Application definition
@@ -158,6 +159,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8b0e-87-255-208-226.ngrok-free.app',
     'https://5efe-92-55-176-122.ngrok-free.app',
     'https://0c87-92-55-176-122.ngrok-free.app',
+    'https://b36e-92-55-176-6.ngrok-free.app',
 ]
 
 THUMBNAIL_DEBUG = True
