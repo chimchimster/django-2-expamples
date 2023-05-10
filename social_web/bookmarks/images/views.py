@@ -1,15 +1,23 @@
-from django.http import JsonResponse, HttpResponse
-from django.views.decorators.http import require_POST
-from django.shortcuts import render, redirect
-from django.shortcuts import get_object_or_404
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.utils.text import slugify
-from .forms import ImageCreateForm
-from .models import Image
+from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import JsonResponse, HttpResponse
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render, redirect
+from django.views.decorators.http import require_POST
+import redis
+from django.conf import settings
 from actions.utils import create_action
 from common.decorators import ajax_required, is_ajax
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from .forms import ImageCreateForm
+from .models import Image
+
+
+r = redis.StrictRedis(
+    host=settings.REDIS_HOST,
+    port=settings.REDIS_PORT,
+    db=settings.REDIS_DB,
+)
 
 
 @login_required
@@ -35,7 +43,9 @@ def image_create(request):
 
 def image_detail(request, id, slug):
     image = get_object_or_404(Image, id=id, slug=slug)
-    return render(request, 'images/image/detail.html', {'image': image})
+    total_views = r.incr(f'image:{image.id}:views')
+    r.zincrby('image_ranking', image.id, image.id)
+    return render(request, 'images/image/detail.html', {'image': image, 'total_views': total_views})
 
 
 @ajax_required
@@ -80,4 +90,16 @@ def image_list(request):
         return render(request, 'images/image/list_ajax.html', {'section': 'images', 'images': images})
 
     return render(request, 'images/image/list.html', {'section': 'images', 'images': images})
+
+
+@login_required
+def image_ranking(request):
+    _image_ranking = r.zrange('image_ranking', 0, -1, desc=True)[:10]
+    print(1, _image_ranking)
+    image_ranking_ids = [int(_id) for _id in _image_ranking]
+    print(2, image_ranking_ids)
+    most_viewed = list(Image.objects.filter(id__in=image_ranking_ids))
+    print(3, most_viewed)
+    most_viewed.sort(key=lambda x: image_ranking_ids.index(x.id))
+    return render(request, 'images/image/ranking.html', {'section': 'images', 'most_viewed': most_viewed})
 

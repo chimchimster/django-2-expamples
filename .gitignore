@@ -12,5 +12,7 @@ social_web/bookmarks/common/__pycache__/
 mysite/mysite/__pycache__/
 mysite/blog/migrations/__pycache__/
 mysite/blog/templatetags/__pycache__/
-
-
+online_store/env/
+online_store/myshop/db.sqlite3
+online_store/myshop/products/
+online_store/myshop/media/
