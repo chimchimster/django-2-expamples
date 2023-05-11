@@ -16,3 +16,4 @@ online_store/env/
 online_store/myshop/db.sqlite3
 online_store/myshop/products/
 online_store/myshop/media/
+online_store/myshop/myshop/.env
