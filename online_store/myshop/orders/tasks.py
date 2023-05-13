@@ -1,9 +1,9 @@
-from myshop.celery import app
+# from myshop.celery import app
 from django.core.mail import send_mail
 from .models import Order
 
 
-@app.task
+# @app.task
 def order_created(order_id):
     order = Order.objects.get(id=order_id)
     subject = f'Order nr. {order.id}'
