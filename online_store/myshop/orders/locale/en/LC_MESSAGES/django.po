@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-14 15:32+0600\n"
+"POT-Creation-Date: 2023-05-17 08:33+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,40 +18,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\orders\models.py:9
+#: orders/models.py:9
 msgid "first_name"
 msgstr ""
 
-#: .\orders\models.py:10
+#: orders/models.py:10
 msgid "last_name"
 msgstr ""
 
-#: .\orders\models.py:11
+#: orders/models.py:11
 msgid "email"
 msgstr ""
 
-#: .\orders\models.py:12
+#: orders/models.py:12
 msgid "address"
 msgstr ""
 
-#: .\orders\models.py:13
+#: orders/models.py:13
 msgid "postal_code"
 msgstr ""
 
-#: .\orders\models.py:14
+#: orders/models.py:14
 msgid "city"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:3
-#: .\orders\templates\orders\order\create.html:6
+#: orders/templates/orders/order/create.html:3
+#: orders/templates/orders/order/create.html:6
 msgid "Checkout"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:8
+#: orders/templates/orders/order/create.html:8
 msgid "Your order"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:18
+#: orders/templates/orders/order/create.html:18
 #, python-format
 msgid ""
 "\n"
@@ -59,20 +59,20 @@ msgid ""
 "                    "
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:25
+#: orders/templates/orders/order/create.html:25
 msgid "Total:"
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:30
+#: orders/templates/orders/order/create.html:30
 msgid "Place an order"
 msgstr ""
 
-#: .\orders\templates\orders\order\created.html:3
-#: .\orders\templates\orders\order\created.html:6
+#: orders/templates/orders/order/created.html:3
+#: orders/templates/orders/order/created.html:6
 msgid "Thank you!"
 msgstr ""
 
-#: .\orders\templates\orders\order\created.html:7
+#: orders/templates/orders/order/created.html:7
 #, python-format
 msgid ""
 "\n"
@@ -81,11 +81,11 @@ msgid ""
 "    "
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:7
+#: orders/templates/orders/order/pdf.html:7
 msgid "My Shop"
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:9
+#: orders/templates/orders/order/pdf.html:9
 #, python-format
 msgid ""
 "\n"
@@ -96,11 +96,11 @@ msgid ""
 "            "
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:16
+#: orders/templates/orders/order/pdf.html:16
 msgid "Bill to"
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:18
+#: orders/templates/orders/order/pdf.html:18
 #, python-format
 msgid ""
 "\n"
@@ -111,39 +111,43 @@ msgid ""
 "            "
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:26
+#: orders/templates/orders/order/pdf.html:26
 msgid "Items bought"
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:30
+#: orders/templates/orders/order/pdf.html:30
 msgid "Product"
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:31
+#: orders/templates/orders/order/pdf.html:31
 msgid "Price"
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:32
+#: orders/templates/orders/order/pdf.html:32
 msgid "Quantity"
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:33
+#: orders/templates/orders/order/pdf.html:33
 msgid "Cost"
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:39
+#: orders/templates/orders/order/pdf.html:39
 #, python-format
 msgid "%(name)s"
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:46
+#: orders/templates/orders/order/pdf.html:46
 msgid "Total"
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:52
+#: orders/templates/orders/order/pdf.html:52
 msgid "Paid"
 msgstr ""
 
-#: .\orders\templates\orders\order\pdf.html:52
+#: orders/templates/orders/order/pdf.html:52
 msgid "Pending payment"
+msgstr ""
+
+#: orders/urls.py:8
+msgid "create/"
 msgstr ""
