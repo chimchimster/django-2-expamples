@@ -4,7 +4,7 @@ from parler.admin import TranslatableAdmin
 
 
 @admin.register(Category)
-class CategoryAdmin(TranslatableAdmin):
+class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug')
 
     def get_prepopulated_fields(self, request, obj=None):
@@ -12,7 +12,7 @@ class CategoryAdmin(TranslatableAdmin):
 
 
 @admin.register(Product)
-class ProductAdmin(TranslatableAdmin):
+class ProductAdmin(admin.ModelAdmin):
     list_display = ('category', 'name', 'price', 'available', 'created', 'updated')
     list_filter = ('available', 'created', 'updated')
     list_editable = ('price', 'available')
