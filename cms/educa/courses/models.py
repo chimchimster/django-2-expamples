@@ -55,6 +55,7 @@ class Content(models.Model):
     class Meta:
         ordering = ['order']
 
+
 class ItemBase(models.Model):
     owner = models.ForeignKey(User, related_name='%(class)s_related', on_delete=models.CASCADE)
     title = models.CharField(max_length=250)
