@@ -20,3 +20,5 @@ online_store/myshop/myshop/.env
 online_store/env
 cms/env
 cms/educa/db.sqlite3
+cms/educa/ssl
+cms/logs
